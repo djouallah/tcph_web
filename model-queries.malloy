@@ -42,7 +42,7 @@ Query:  lineitem -> {
                  
 // --                
 // Name: by_flag
-Query :  lineitem -> {
+Query :  by_flag is lineitem -> {
     group_by : l_returnflag
     aggregate :_count_all,_count,_Ratio
                    }
@@ -62,7 +62,7 @@ Query :  lineitem -> {
               group_by: customer_region.r_name
               nest : yyy is {
                     group_by :customer_nation.n_name
-                        nest: by_flag
+                        nest: x is from(->by_flag)
                              }
 
                         }
