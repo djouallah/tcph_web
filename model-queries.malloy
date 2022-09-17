@@ -5,13 +5,15 @@ import "model.malloy"
 Query: lineitem -> {  
     aggregate: count_customers
                  }
- // --
+
+// --
 // Name: count all
 Query: lineitem -> {  
     group_by: l_returnflag
     aggregate: _count, ignore_filter_context is all(_count)
                  }
                  
+
 // --
 // Name: Top_customers_Qty
 Query:  lineitem -> {  
@@ -21,13 +23,14 @@ Query:  lineitem -> {
     
                  }
  
- // --
+// --
 // Name: sum_Quantity_by_Customer_region
 Query:  lineitem -> {  
      group_by : customer_region.r_name
      aggregate: sum_qty
                  }
- // --
+                 
+// --
 // Name: TPCH1
 Query:  lineitem -> {
     
@@ -37,14 +40,14 @@ Query:  lineitem -> {
                avg_qty,avg_price,avg_disc,_count
                  }
                  
- // --                
+// --                
 // Name: by_flag
 Query :  lineitem -> {
     group_by : l_returnflag
     aggregate :_count_all,_count,_Ratio
                    }
                    
- // --                  
+// --                  
 // Name: by_year
 Query :  lineitem -> {
     group_by : Shipdate_year
