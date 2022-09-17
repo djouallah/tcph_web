@@ -1,0 +1,8 @@
+[
+  {
+    "name": "model",
+    "dataTables": ["lineitem.parquet","orders.parquet","customer.parquet","nation.parquet","region.parquet","partsupp.parquet","supplier.parquet","part.parquet"],
+    "modelPath": "./model.malloy",
+    "queryPath": "./model-queries.malloy"
+  }
+]
