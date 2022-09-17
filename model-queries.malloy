@@ -55,22 +55,6 @@ Query :  lineitem -> {
                    }
 
 // --
-// Name: by_shipmod_flag
-Query :  lineitem -> {
-    aggregate :_count_all
-          nest : xxx is {
-              group_by: customer_region.r_name
-              nest : yyy is {
-                    group_by :customer_nation.n_name
-                        nest: x is from(->by_flag)
-                             }
-
-                        }
-  
-                            }
-
-
-// --
 // Name: by_Country_supplier
 Query :  lineitem -> {
     group_by : Supplier_Country is supplier_nation.n_name
