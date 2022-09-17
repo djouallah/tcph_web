@@ -1,1 +1,7 @@
 import "model.malloy"
+
+
+// Name: count customers who bought something
+Query: lineitem -> {  
+    aggregate: count_customers
+                 }
