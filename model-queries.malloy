@@ -15,7 +15,7 @@ Query: lineitem -> {
                  
 // --                  
 // Name: Bar_chart
-Query :  xx is lineitem -> {
+Query :  lineitem -> {
     group_by:customer_region.r_name
        nest : by_year_bar_chart is {
           group_by : customer_nation.n_name
