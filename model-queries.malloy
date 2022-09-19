@@ -23,7 +23,18 @@ Query :  lineitem -> {
           aggregate :Sold_BY_Year is sum_qty/all(sum_qty)
                    }
 }
-                 
+
+
+// --                  
+// Name: Line_chart
+Query :  lineitem -> {
+group_by: customer_region.r_name
+    nest : line_line_chart is {
+        group_by : l_shipdate
+        aggregate :Sold_BY_Year is sum_qty/all(sum_qty)
+                   }
+                   }
+
 
 // --
 // Name: Top_customers_Qty
