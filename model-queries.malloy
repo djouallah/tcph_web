@@ -64,7 +64,7 @@ Query:  lineitem -> {
                  
 // --                
 // Name: by_flag
-Query :  by_flag is lineitem -> {
+Query :  lineitem -> {
     group_by : l_returnflag
     aggregate :_count_all,_count,_Ratio
                    }
